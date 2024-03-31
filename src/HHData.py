@@ -12,8 +12,8 @@ class HHData:
         """Получает список работодателей"""
         response = requests.get('https://api.hh.ru/employers',
                                 {'text': search_query, 'area': 113,
-                                 'per page': 20, 'only with vacancies': True,
-                                 'sort by': 'by_vacancies_open'})
+                                 'per page': 100, 'only with vacancies': True,
+                                 'sort_by': 'by_vacancies_open'})
         employers = json.loads(response.text)['items']
         return employers
 
@@ -25,7 +25,5 @@ class HHData:
         return vacancies
 
 
-emp = HHData()
-l = emp.get_employers('it')
-f = emp.get_vacancies(l[3])
-print(f)
+
+
