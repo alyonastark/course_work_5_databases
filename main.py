@@ -55,6 +55,7 @@ def user_interaction():
                 db_manager.get_vacancies_with_keyword(search_query)
                 continue
             else:
+                db_manager.close_connection()
                 break
 
 

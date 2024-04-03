@@ -23,7 +23,3 @@ class HHData:
         response_vacancies = requests.get(url)
         vacancies = json.loads(response_vacancies.text)['items']
         return vacancies
-
-
-
-
